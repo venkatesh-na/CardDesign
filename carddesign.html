@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*neumorphic cards*/
+        *
+        {
+            margin:0;
+            padding:0;
+           
+        }
+        body
+        {
+            height: 100vh;
+            width:100%;
+            
+        }
+        body .card1
+        {
+           /* width: 100vw; */
+           height: 100vh;
+           width:100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        .outer
+        {
+            width:270px;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            /* transition: top 1s; */
+            box-shadow: inset 0px 0px 9px rgb(160, 159, 159);
+        }
+        .inner
+        {
+           
+            width:88%;
+            height: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 4px grey;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            transition:transform 0.4s linear;
+           backdrop-filter: blur(8px);
+        }
+        .inner p
+        {
+            text-align: center;
+          
+        }
+        .inner button
+        {
+            padding:5px 20px;
+            background-color: rgb(255, 197, 91);
+            border:none;
+            color:white;
+            border-radius: 4px;
+        }
+        .inner p,
+        .inner h1,
+        .inner button
+        {
+            margin:10px 0px;
+        }
+        .outer:hover .inner
+        {
+           transform:translateY(-50px);
+           background-color: rgb(27, 17, 0);
+           color:white;
+        }
+        .outer:hover p
+        {
+          color:rgb(165, 164, 164);
+        }
+        .outer:hover button
+        {
+            font-weight: 600;
+        }
+        .outer:hover button:hover
+        {
+            outline: 2px solid rgb(255, 197, 91);
+            /* i have use an ouline instead of border becuase border
+            affects the othercontents position but outline not */
+            color:rgb(255, 197, 91);
+            background-color: rgb(27, 17, 0);
+        }
+        .outer:hover button:active
+        {
+            transform: scale(0.7);
+        }
+        /*neumorphic cards*/
+
+        /* nike shoes card */
+        .card2
+        {
+           width: 100%;
+           height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+          
+          
+        }
+        
+        .card2 .outer2
+        {
+            width:220px;
+            height: 300px;
+           
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(53, 51, 51);
+            position: relative;
+       
+        }
+       .card2 .outer2::before
+       {
+           content:"";
+           position:absolute;
+            transform: translate(70px,-25px);
+           background-color: rgb(255, 115, 0);
+           width: 86%;
+           height: 60%;
+           border-radius: 100px;
+           transition: all 1s linear;
+        }
+        .card2 .outer2:hover::before
+        {
+            transform: translate(40px,-88px) scale(1.6);
+        }
+        .card2 .outer2 div:nth-child(1)
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            /* background-color: darkgrey; */
+        }
+        .card2 .outer2 img
+        {
+            width: 170px;
+            height: 150px;
+            z-index: 1;
+            transform: translateY(50px);
+            transition: all 1s;
+        }
+        .card2 .outer2 button
+        {
+            background-color: rgb(255, 115, 0);
+            padding: 5px 18px;
+            border-radius: 5px;
+            color:white;
+            border:none;
+            margin-top:11px;
+        }
+        .card2 .outer2 button:hover
+        {
+            background-color:rgb(255, 183, 124);
+        }
+        
+
+        
+        .outer2 div:nth-child(1) .size,
+        .card2 .outer2 button
+        {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s;
+        }
+
+        .card2 .outer2:hover img,
+        .card2 .outer2:hover h2
+        {
+            transform: translateY(0px)
+        }
+        .card2 .outer2:hover .size,
+        .card2 .outer2:hover button
+        {
+            opacity: 1;
+            transform: translateY(0px);
+           
+            
+        }
+        .outer2 .size
+        {
+            display: flex;
+            margin:10px;
+            
+        }
+        .outer2 .size p
+        {
+            margin:0px 10px;
+            color:white;
+        }
+        .outer2 .size div
+        {
+           
+            background-color: white;
+            margin:0px 5px;
+            padding:2px 5px;
+        }
+        .outer2 .size div:hover
+        {
+            background-color:rgb(255, 115, 0);
+            color:white;
+            cursor:pointer;
+        }
+        .outer2 div h2{
+            color:white;
+            transform: translateY(50px);
+            margin: 5px 0px;
+            transition: all 1s;
+        }
+        /* nike shoes card */
+        /*glassmorphism*/
+
+         /*glassmorphism*/
+
+      
+       .card3
+       {
+           width:100%;
+           height:100vh;
+           display: flex;
+           justify-content: center;
+           align-items:center;
+           background-color:rgb(39, 39, 39);
+           position: relative;
+       }
+       .card3 .outer3
+       {
+        width: 320px;
+        height: 200px;
+        border-radius: 20px;
+        
+        position: relative;
+       }
+       .card3 .outer3::before
+       {
+           position: absolute;
+           content:"";
+           width:150px;
+           height:150px;
+           left:-70px;
+           top:-70px;
+           background-image:linear-gradient(to bottom right,rgb(233, 71, 98),rgb(245, 163, 70));
+           border-radius: 100px;
+       }
+       .back
+       {
+           
+        width:200px;
+           height:200px;
+           right:-80px;
+           bottom:-80px;
+           background-image:linear-gradient(to bottom right,rgb(233, 71, 98),rgb(245, 163, 70));
+           border-radius: 100px;
+           position: absolute;
+       }
+      
+       .card3 .outer3 .inner3
+       {
+           box-sizing:border-box;
+         backdrop-filter: blur(16px);
+         /*this blur effect is on the inner div it is not on the outer div
+         and the content inside the inner div will not affect this property
+         */
+         background-color:rgba(255, 255, 255, 0.144);
+         width: 320px;
+        height: 200px;
+        border-radius:20px;
+       color:rgb(192, 191, 191);
+        padding:30px;
+        border:1px solid rgb(121, 120, 120);
+        transition: transform 0.4s;
+       }
+       .card3 .outer3 .inner3:hover
+       {
+            transform: rotateX(-30deg) rotateY(20deg);
+            cursor:pointer;
+       }
+       .card3 .outer3 .inner3 h1
+       {
+        font-style:italic;
+       }
+      
+       .card3 .outer3 .inner3 div:nth-child(3)
+       {
+           width:100%;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           margin:10px 0px;
+       }
+       .card3 .outer3 .inner3 div:nth-child(3) h5:nth-child(2)
+       {
+           font-size:8px;
+       }
+       .card3 .outer3 .inner3 div:nth-child(3) h5:nth-child(3)
+       {
+           font-size:20px;
+       }
+
+       .card3 .outer3 .inner3 div:nth-child(2) span
+       {
+            display: inline-block;
+            font-size: 25px;
+            letter-spacing: 2px;
+       }
+       .card3 .outer3 .inner3 div:nth-child(2)
+       {
+           margin-top:20px;
+           display: flex;
+           justify-content: space-between;
+       }
+      
+       .card3 .outer3 .inner3 p
+       {
+           flex:1;
+           font-size:10px;
+       }
+
+    </style>
+</head>
+<body>
+     <!--neumorphic cards-->
+     <div class = "card1">
+        <div class = "outer">
+                <div class = "inner">
+                    <h1>Card One</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, voluptate quam. Vero porro repellat voluptatibus? Quas ad harum provident ex?</p>
+                    <button>select</button> 
+                </div>
+        </div>
+    </div>
+    <!--neumorphic cards-->
+    <!--nike shoes card
+      inspired by online tutorial youtube channel
+        i havent seen the code of his i just see how 
+        animation is happening and i builded on my own
+        i have used div for that circle and becuase of that 
+        i used z-index but when i have used zindex i have difficulty
+        in hovering the element than i watch his video and he used
+        ::before so i also used it and it worked
+            -->
+    <div class = "card2">
+        <div class = "outer2">
+            <div>
+                <img src = "shoe-nike-air-max-sneakers-running-running-shoes-43b03db4a8833fb0330f3819d19b37c0.png">
+                <h2>Nike Shoes</h2>
+                <div class = "size">
+                    <p>size</p>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                </div>
+                <button>Buy Now</button>
+           </div>
+        </div>
+    </div>
+    <!--nike shoes card-->
+    <!-- glassmorphism --> 
+       <div class = "card3">
+           <div class = "outer3">
+               <div class = "back">
+               </div>
+               <div class = "inner3">
+                    <h1>VISA</h1>
+                    <div>
+                        <span>7656</span>
+                        <span>5432</span>
+                        <span>8976</span>
+                        <span>2234</span>
+                    </div>
+                    <div>
+                        <p>1234</p>
+                        <h5>VALID<br>THRU</h5>
+                        <h5>12/24</h1>
+                    </div>
+                    <h6>VENKATESH NAIK</h6>
+                </div>
+           </div>
+
+       </div>
+    <!-- glassmorphism -->
+</body>
+<script>
+   
+  
+</script>
+</html>
+</html>>
